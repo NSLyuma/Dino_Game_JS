@@ -22,6 +22,9 @@
     position: relative;
     top: 110px;
     left: 580px;
+}
+
+.move {
     animation: cactusMov 2s infinite linear;
 }
 
@@ -59,4 +62,15 @@
     100% {
         top: 150px;
     }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#btn {
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
 }
