@@ -22,3 +22,22 @@ let isAlive = setInterval(function() {
         alert("GAME OVER");
     }
 }, 10)
+
+const btn = document.getElementById("btn");
+btn.addEventListener("click", function(event) {
+    stopGame();
+})
+
+btn.addEventListener("keydown", function(event) {
+    event.preventDefault();
+})
+
+function stopGame() {
+    if (cactus.classList == "move") {
+        cactus.classList.remove("move");
+        btn.innerText = "Start";
+    } else {
+        cactus.classList.add("move");
+        btn.innerText = "Stop";
+    }
+}
