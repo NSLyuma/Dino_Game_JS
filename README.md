@@ -1,4 +1,4 @@
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://github.com/NSLyuma/Game_JS/blob/main/img/dino_game.gif)
 
 ### Игра с динозавром почти как в Гугле.
 ##### Запускается через index.html.
