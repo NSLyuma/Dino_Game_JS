@@ -1,8 +1,14 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
+const btn = document.getElementById("btn");
+const score = document.getElementById("score");
+const latestScore = document.getElementById("latest");
+let counter = 0;
 
 document.addEventListener("keydown", function(event) {
-    jump();
+    if (event.keyCode === 0 || event.keyCode === 32) {
+        jump();
+    }
 })
 
 function jump () {
@@ -20,10 +26,14 @@ let isAlive = setInterval(function() {
     
     if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
         alert("GAME OVER");
+        latestScore.innerHTML = Math.floor(counter/10);
+        counter = 0;
+    } else if (btn.innerText == "Stop") {
+        counter++;
+        score.innerHTML = `Score: ${Math.floor(counter/10)}`
     }
 }, 10)
 
-const btn = document.getElementById("btn");
 btn.addEventListener("click", function(event) {
     stopGame();
 })
@@ -36,8 +46,12 @@ function stopGame() {
     if (cactus.classList == "move") {
         cactus.classList.remove("move");
         btn.innerText = "Start";
+        latestScore.innerHTML = Math.floor(counter/10);
+        counter = 0;
     } else {
         cactus.classList.add("move");
         btn.innerText = "Stop";
+        counter++;
+        score.innerHTML = `Score: ${Math.floor(counter/10)}`
     }
 }
