@@ -9,16 +9,21 @@
 
 </head>
 <body>
-    <div class="game">
+    <div class="score-box">
+        <b id="score">Score: 0</b>
+        <p>Latest score: <span id="latest"></span></p>
+    </div>
+
         <div class="game">
             <div id="dino"></div>
             <div id="cactus" class="move"></div>
         </div>
-    
+
+        <div class="note">Press <span class="space">&nbsp;space&nbsp;</span> to jump</div>
+
         <div class="container">
             <button id="btn">Stop</button>
         </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
