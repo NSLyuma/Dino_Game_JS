@@ -7,5 +7,5 @@
 * JavaScript
 * Анимацию в CSS
 #### Установка:
-1. Клонировать репозиторий `git clone https://github.com/NSLyuma/Portfolio_landing_page.git` или скачать архив.
+1. Клонировать репозиторий `git clone https://github.com/NSLyuma/Dino_Game_JS.git` или скачать архив.
 2. Открыть `index.html` в любом браузере.
