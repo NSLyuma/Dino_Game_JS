@@ -28,6 +28,7 @@ li {
   height: 200px;
   border-bottom: 1px solid #000;
   margin: auto;
+  position: relative;
 }
 
 #dino {
@@ -39,21 +40,37 @@ li {
   top: 150px;
 }
 
+#cactus,
+#krab {
+  position: absolute;
+  left: 580px;
+}
+
 #cactus {
   width: 20px;
   height: 40px;
   background-image: url(img/cactus.png);
   background-size: 20px 40px;
-  position: relative;
-  top: 110px;
-  left: 580px;
+  top: 160px;
 }
 
-.move {
-  animation: cactusMove 2s infinite linear;
+#krab {
+  width: 30px;
+  height: 30px;
+  background-image: url(img/krab.png);
+  background-size: 30px 30px;
+  top: 176px;
 }
 
-@keyframes cactusMove {
+.moveKrab {
+  animation: moveObstacle 1.97s infinite linear;
+}
+
+.moveCactus {
+  animation: moveObstacle 2.68s infinite linear;
+}
+
+@keyframes moveObstacle {
   0% {
     left: 580px;
   }

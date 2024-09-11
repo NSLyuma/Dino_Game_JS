@@ -1,5 +1,6 @@
 const dino = document.getElementById('dino');
 const cactus = document.getElementById('cactus');
+const krab = document.getElementById('krab');
 const btn = document.getElementById('btn');
 const score = document.getElementById('score');
 const latestScore = document.getElementById('latest');
@@ -29,6 +30,8 @@ function updateResults() {
   results.innerHTML = resultsTable;
 
   counter = 0;
+  cactus.style.left = '580px';
+  krab.style.left = '580px';
 }
 
 function jump() {
@@ -45,8 +48,14 @@ let isAlive = setInterval(function () {
   let cactusLeft = parseInt(
     window.getComputedStyle(cactus).getPropertyValue('left'),
   );
+  let krabLeft = parseInt(
+    window.getComputedStyle(krab).getPropertyValue('left'),
+  );
 
-  if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+  if (
+    ((cactusLeft < 50 && cactusLeft > 0) || (krabLeft < 50 && krabLeft > 0)) &&
+    dinoTop >= 140
+  ) {
     alert('GAME OVER');
     updateResults();
   } else if (btn.innerText == 'Stop') {
@@ -64,12 +73,14 @@ btn.addEventListener('keydown', function (event) {
 });
 
 function stopGame() {
-  if (cactus.classList == 'move') {
-    cactus.classList.remove('move');
+  if (cactus.classList == 'moveCactus' && krab.classList == 'moveKrab') {
+    cactus.classList.remove('moveCactus');
+    krab.classList.remove('moveKrab');
     btn.innerText = 'Start';
     updateResults();
   } else {
-    cactus.classList.add('move');
+    cactus.classList.add('moveCactus');
+    krab.classList.add('moveKrab');
     btn.innerText = 'Stop';
     counter++;
     score.innerHTML = `Score: ${Math.floor(counter / 10)}`;
